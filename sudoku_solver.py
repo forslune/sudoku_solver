@@ -1,3 +1,4 @@
+#Adding some cool comments
 import math
 input = [[0,0,0,0,0,0,0,0,0],
 		 [0,0,1,0,0,0,0,0,0],

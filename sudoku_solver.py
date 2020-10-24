@@ -12,7 +12,7 @@ input = [[0,0,0,0,0,0,0,0,0],
 
 print(input[1])
 print(input[1][1])
-print(input[1][:]-input[1][2])
+print(input[1]==0)
 
 
 
@@ -23,7 +23,12 @@ def fill(input):
 			for k in range(9):
 				if input[i][j]==0:
 					input[i][j]=k+1
-				if input[i][j]==input[i] | input[i][j]==input[j] | input[i][j]==input[i][j]:
-					print('hej')
+					if sum([n==k+1 for n in input[i][:]]+[n==k+1 for n in input[:][j]])==18:
+						fill(input)
+						print(input)
+					else:
+						input[i][j]=0
+				
+	return(input)
 
-	
+print(fill(input))
